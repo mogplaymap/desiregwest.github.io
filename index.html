@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Карта детских площадок</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css.css">
+    <script src="https://vk.com/js/api/openapi.js?151" type="text/javascript"></script>
+    <script type='text/javascript' src='js/jsmap.js'></script>
+
+    <style>
+#map {
+      height: 90%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+P {
+    line-height: 1.0em;
+   }
+    </style>
+  </head>
+   <body>  
+            <div id="menu">
+                        <ul>
+                              <a href="index.html"><li> Карта </li></a>
+                              <a href="aboutproject.html"><li> О проекте </li></a>
+                              <a href="comments.html"><li> Комментарии </li></a>
+                              <a href="vkauth.html"><li> Авторизация </li></a>
+                        </ul>
+                  </div>
+         
+                  <div id="style-selector-control" class="map-control">
+<!-- Показать все маркеры -->                            
+                        <input onclick="showMarkers();" type="radio" name="show-hide" id="hide-poi"
+                                  class="selector-control" checked="checked">                                  
+                              <label for="hide-poi"><img src="markerall.png" width="25" height="25"></label>
+<!-- Good mark -->                                  
+                              <input onclick="clearMarkers(); showMarkersGood();" type="radio" name="show-hide" id="show-poi"
+                                  class="selector-control">
+                              <label for="show-poi"><img src="markergood.png" width="25" height="25"></label>
+<!-- Mid mark -->             
+                              <input onclick="clearMarkers(); showMarkersMid()" type="radio" name="show-hide" id="1show-poi"
+                                  class="selector-control">
+                              <label for="1show-poi"><img src="markermid.png" width="25" height="25"></label>
+<!-- Bad mark -->                                
+                              <input onclick="clearMarkers(); showMarkersBad()" type="radio" name="show-hide" id="2show-poi"
+                                  class="selector-control">
+                              <label for="2show-poi"><img src="markerbad.png" width="25" height="25"></label>
+<!-- Best mark -->                                 
+                              <input onclick="clearMarkers(); showMarkersBest()" type="radio" name="show-hide" id="3show-poi"
+                                  class="selector-control">
+                              <label for="3show-poi"><img src="markercup.png" width="25" height="25"></label>                      
+                              </div>
+
+      <div id="map"></div>
+
+      
+      
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8_mij7maSmO4JOGEfMDlfgEHBGWuMxJ4&callback=initMap">
+    </script>
+  </body>
+</html>
